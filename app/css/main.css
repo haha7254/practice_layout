@@ -1,3 +1,27 @@
+@font-face {
+  font-family: 'icomoon';
+  src: url('../font/icomoon//icomoon.eot');
+  src: url('../font/icomoon//icomoon.eot') format('embedded-opentype'), url('../font/icomoon//icomoon.ttf') format('truetype'), url('../font/icomoon//icomoon.woff') format('woff'), url('../font/icomoon//icomoon.svg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+[class^="icon-"],
+[class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-search:before {
+  content: "\e986";
+}
 html {
   height: 100%;
 }
@@ -7,26 +31,94 @@ html body {
   text-align: center;
   margin: 0;
   width: 100%;
-  height: 100%;
+  height: 400px;
   font-size: medium;
   font-family: Roboto, RobotoDraft, Helvetica, Arial, sans-serif, "微軟正黑體", "Microsoft JhengHei";
   background: white;
   color: rgba(50, 50, 50, 0.8);
   background-color: #eeeeee;
 }
-.cover {
+#header {
+  position: fixed;
+  left: 0;
+  top: 0;
   display: inline-block;
-  position: relative;
+  width: 100%;
+  height: 55px;
+  background-color: #4285f4;
+  z-index: 50;
+}
+#header + * {
+  margin-top: 55px;
+}
+#header .container {
+  display: inline-block;
+  max-width: 980px;
   width: 100%;
   height: 100%;
-  background-color: rgba(255, 0, 0, 0.2);
+  padding: 0 10px;
+  *zoom: 1;
 }
-.cover .user {
+#header .container:after,
+#header .container:before {
+  display: table;
+  line-height: 0;
+  content: "";
+}
+#header .container:after {
+  clear: both;
+}
+#header .container > * {
   display: inline-block;
+  float: left;
+}
+#header .container .logo {
+  width: 150px;
+  height: 100%;
+  line-height: 55px;
+  font-size: 30px;
+  color: white;
+  letter-spacing: 3px;
+  text-align: left;
+}
+#header .container .avatar {
+  width: 35px;
+  height: 35px;
+  margin-top: 10px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+#header .container .avatar img {
+  width: 100%;
+}
+#header .container .search {
+  position: relative;
+  width: calc( 100% - 150px - 35px - 10px - 10px );
+  height: 100%;
+  padding: 0 10px;
+}
+#header .container .search label {
   position: absolute;
-  top: 100px;
-  left: 200px;
-  width: 52px;
-  height: 52px;
-  background-color: white;
+  top: 10px;
+  left: 10px;
+  display: inline-block;
+  width: 35px;
+  height: 35px;
+  padding: 0 10px;
+  line-height: 35px;
+  cursor: pointer;
+}
+#header .container .search input {
+  width: 100%;
+  height: 35px;
+  margin-top: 10px;
+  padding-left: 40px;
+}
+#header .container .search div {
+  width: 50px;
+  height: 50px;
+}
+#article {
+  margin-top: 55px;
+  border: 1px solid rgba(255, 0, 0, 0.2);
 }
